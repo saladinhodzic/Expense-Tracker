@@ -28,7 +28,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-image: url("../public/background-website\ 1.png");
+  background-image: url("/background-website\ 1.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
