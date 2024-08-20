@@ -6,10 +6,12 @@ export default function LandingPage() {
         <h1 className="landing-page-title">
           Find how much you can save in a month.
         </h1>
-        <p>
-          Using our app you can calculate your daily expenses and savings{" "}
+        <span className="landing-page-text">
+          <p>
+            Using our app you can calculate your daily expenses and savings.
+          </p>
           <button>Try it now</button>
-        </p>
+        </span>
       </div>
     </div>
   );
