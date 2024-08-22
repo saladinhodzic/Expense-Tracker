@@ -3,7 +3,7 @@ import "./Header.css";
 import { AppContext } from "../../context/ContextWrapper";
 
 export default function Header() {
-  const { loggedIn, navigate } = useContext(AppContext);
+  const { loggedIn, navigate, location } = useContext(AppContext);
 
   let list = (
     <ul className="list">
@@ -12,13 +12,16 @@ export default function Header() {
       <li>Your expenses</li>
     </ul>
   );
+  console.log(location);
+  let loginButton =
+    location.pathname === "/login" ? (
+      <li>Login</li>
+    ) : (
+      <button onClick={() => navigate("/login")}>Login</button>
+    );
 
   if (!loggedIn) {
-    list = (
-      <ul className="list">
-        <button onClick={() => navigate("/login")}>Login</button>
-      </ul>
-    );
+    list = <ul className="list">{loginButton}</ul>;
   }
 
   return (
