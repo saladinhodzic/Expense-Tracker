@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import "./LandingPage.css";
+import { AppContext } from "../../context/ContextWrapper";
 export default function LandingPage() {
+  const { navigate } = useContext(AppContext);
   return (
     <div className="landing-page">
       <div className="landing-page-wrapper">
@@ -10,7 +13,7 @@ export default function LandingPage() {
           <p>
             Using our app you can calculate your daily expenses and savings.
           </p>
-          <button>Try it now</button>
+          <button onClick={() => navigate("/login")}>Try it now</button>
         </span>
       </div>
     </div>
