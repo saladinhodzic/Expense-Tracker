@@ -13,7 +13,7 @@ export default function LandingPage() {
           <p>
             Using our app you can calculate your daily expenses and savings.
           </p>
-          <button onClick={() => navigate("/login")}>Try it now</button>
+          <button onClick={() => navigate("/auth")}>Try it now</button>
         </span>
       </div>
     </div>

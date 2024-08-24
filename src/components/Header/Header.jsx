@@ -12,12 +12,12 @@ export default function Header() {
       <li>Your expenses</li>
     </ul>
   );
-  console.log(location);
+
   let loginButton =
-    location.pathname === "/login" ? (
-      <li>Login</li>
+    location.pathname === "/auth" ? (
+      <p>Login</p>
     ) : (
-      <button onClick={() => navigate("/login")}>Login</button>
+      <button onClick={() => navigate("/auth")}>Login</button>
     );
 
   if (!loggedIn) {
