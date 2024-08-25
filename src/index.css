@@ -39,11 +39,18 @@ h2 {
 }
 
 input {
-  background-color: #ffffff89;
+  background-color: #ffffff45;
   border: none;
   border-radius: 8px;
   padding: 0.25em 1em;
   font-size: 1.1em;
+  transition: all 200ms ease-in;
+  outline: none;
+}
+input:focus {
+  background-color: transparent;
+  border: 2px solid #ffffffaa;
+  outline: none;
 }
 
 button {
