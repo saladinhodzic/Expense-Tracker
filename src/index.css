@@ -38,6 +38,14 @@ h2 {
   font-weight: 400;
 }
 
+input {
+  background-color: #ffffff89;
+  border: none;
+  border-radius: 8px;
+  padding: 0.25em 1em;
+  font-size: 1.1em;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid #f1f1f1;
