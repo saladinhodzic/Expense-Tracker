@@ -42,14 +42,13 @@ input {
   background-color: #ffffff45;
   border: none;
   border-radius: 8px;
-  padding: 0.25em 1em;
+  padding: 0.6em 1em;
   font-size: 1.1em;
   transition: all 200ms ease-in;
-  outline: none;
 }
 input:focus {
   background-color: transparent;
-  border: 2px solid #ffffffaa;
+  border: 1px solid #ffffffaa;
   outline: none;
 }
 
@@ -65,7 +64,7 @@ button {
   transition: all 200ms ease-in;
 }
 button:hover {
-  box-shadow: 0 0 20px 2px #ffffffc6;
+  box-shadow: 0 0 20px 1px #ffffffc6;
 }
 button:focus,
 button:focus-visible {
