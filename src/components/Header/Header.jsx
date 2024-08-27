@@ -6,20 +6,17 @@ export default function Header() {
   const { checkUser, setLoggedIn, loggedIn, navigate, location } =
     useContext(AppContext);
 
+  const handleRemoveUser = () => {
+    setLoggedIn((prev) => !prev);
+    localStorage.removeItem("user");
+  };
+
   let list = (
     <ul className="list">
       <li>Profile</li>
       <li>Your Savings</li>
       <li>Your expenses</li>
-      <button
-        onClick={() => {
-          localStorage.removeItem("user");
-          setLoggedIn((prev) => !prev);
-          console.log(loggedIn);
-        }}
-      >
-        Logout
-      </button>
+      <button onClick={handleRemoveUser}>Logout</button>
     </ul>
   );
 
