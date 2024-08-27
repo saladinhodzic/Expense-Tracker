@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -6,9 +6,15 @@ const AppContext = createContext();
 
 function ContextWrapper({ children }) {
   const [loggedIn, setLoggedIn] = useState(false);
-  const checkUser = localStorage.getItem("user");
   const navigate = useNavigate();
   const location = useLocation();
+  const checkUser = localStorage.getItem("user");
+
+  useEffect(() => {
+    if (!checkUser) {
+      navigate("/");
+    }
+  }, [checkUser]);
 
   const values = {
     loggedIn,
