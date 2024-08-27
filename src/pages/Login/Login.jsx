@@ -1,7 +1,10 @@
 import "./Login.css";
 import { useFormik } from "formik";
+import { useContext } from "react";
 import * as Yup from "yup";
+import { AppContext } from "../../context/ContextWrapper";
 export default function Login() {
+  const { navigate } = useContext(AppContext);
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -16,7 +19,10 @@ export default function Login() {
         .required("Required."),
     }),
 
-    onSubmit: (values) => console.log(values),
+    onSubmit: (values) => {
+      localStorage.setItem("user", JSON.stringify(values));
+      navigate("/home");
+    },
   });
 
   return (
