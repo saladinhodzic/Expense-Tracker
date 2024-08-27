@@ -6,6 +6,7 @@ const AppContext = createContext();
 
 function ContextWrapper({ children }) {
   const [loggedIn, setLoggedIn] = useState(false);
+  const checkUser = localStorage.getItem("user");
   const navigate = useNavigate();
   const location = useLocation();
 
