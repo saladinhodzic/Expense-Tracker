@@ -11,16 +11,17 @@ function ContextWrapper({ children }) {
   const checkUser = localStorage.getItem("user");
 
   useEffect(() => {
-    if (!checkUser) {
+    if (!checkUser && !loggedIn) {
       navigate("/");
     }
-  }, [checkUser]);
+  }, [loggedIn]);
 
   const values = {
     loggedIn,
     setLoggedIn,
     navigate,
     location,
+    checkUser,
   };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 }

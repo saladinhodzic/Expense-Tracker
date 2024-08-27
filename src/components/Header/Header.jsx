@@ -3,7 +3,8 @@ import "./Header.css";
 import { AppContext } from "../../context/ContextWrapper";
 
 export default function Header() {
-  const { setLoggedIn, loggedIn, navigate, location } = useContext(AppContext);
+  const { checkUser, setLoggedIn, loggedIn, navigate, location } =
+    useContext(AppContext);
 
   let list = (
     <ul className="list">
@@ -13,7 +14,8 @@ export default function Header() {
       <button
         onClick={() => {
           localStorage.removeItem("user");
-          setLoggedIn(false);
+          setLoggedIn((prev) => !prev);
+          console.log(loggedIn);
         }}
       >
         Logout
@@ -28,7 +30,7 @@ export default function Header() {
       <button onClick={() => navigate("/auth")}>Login</button>
     );
 
-  if (!loggedIn) {
+  if (!loggedIn && !checkUser) {
     list = <ul className="list">{loginButton}</ul>;
   }
 

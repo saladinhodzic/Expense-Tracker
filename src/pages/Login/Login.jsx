@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as Yup from "yup";
 import { AppContext } from "../../context/ContextWrapper";
 export default function Login() {
-  const { navigate, setLoggedIn } = useContext(AppContext);
+  const { navigate, setLoggedIn, loggedIn } = useContext(AppContext);
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -20,7 +20,7 @@ export default function Login() {
     }),
 
     onSubmit: (values) => {
-      setLoggedIn(true);
+      setLoggedIn((prev) => !prev);
       localStorage.setItem("user", JSON.stringify(values));
       navigate("/home");
     },
