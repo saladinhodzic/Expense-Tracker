@@ -22,7 +22,7 @@ export default function Header() {
 
   let loginButton =
     location.pathname === "/auth" ? (
-      <p>Login</p>
+      <li>Login</li>
     ) : (
       <button onClick={() => navigate("/auth")}>Login</button>
     );

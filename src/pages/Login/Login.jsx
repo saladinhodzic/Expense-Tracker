@@ -41,6 +41,9 @@ export default function Login() {
             onBlur={formik.handleBlur}
             value={formik.values.username}
           />
+          {formik.touched.username && formik.errors.username ? (
+            <div className="error-message">{formik.errors.username}</div>
+          ) : null}
         </div>
         <div className="input-field">
           <label htmlFor="email">Email</label>
@@ -53,7 +56,7 @@ export default function Login() {
             value={formik.values.email}
           />
           {formik.touched.email && formik.errors.email ? (
-            <div>{formik.errors.email}</div>
+            <div className="error-message">{formik.errors.email}</div>
           ) : null}
         </div>
         <div className="input-field">

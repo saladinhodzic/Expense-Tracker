@@ -1,6 +1,6 @@
 .login-wrapper {
   width: 25%;
-  height: 350px;
+  height: 400px;
   box-shadow: 0 0 20px 0 #ffffff9a;
   border-radius: 5px;
   padding: 1.5em;
@@ -21,4 +21,10 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5em;
+}
+
+.error-message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
