@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as Yup from "yup";
 import { AppContext } from "../../context/ContextWrapper";
 export default function Login() {
-  const { navigate, setLoggedIn, loggedIn } = useContext(AppContext);
+  const { setLoggedIn } = useContext(AppContext);
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -12,7 +12,10 @@ export default function Login() {
       password: "",
     },
     validationSchema: Yup.object().shape({
-      username: Yup.string().min(2, "Too short.").max(12, "Too long."),
+      username: Yup.string()
+        .min(2, "Too short.")
+        .max(12, "Too long.")
+        .required("Required."),
       email: Yup.string().email("Invalid email.").required("Requried."),
       password: Yup.string()
         .min(6, "Password too short.")
@@ -35,6 +38,7 @@ export default function Login() {
             id="username"
             name="username"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.username}
           />
         </div>
@@ -45,8 +49,12 @@ export default function Login() {
             id="email"
             name="email"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
           />
+          {formik.touched.email && formik.errors.email ? (
+            <div>{formik.errors.email}</div>
+          ) : null}
         </div>
         <div className="input-field">
           <label htmlFor="password">Password</label>
@@ -55,8 +63,12 @@ export default function Login() {
             id="password"
             name="password"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.password}
           />
+          {formik.touched.password && formik.errors.password ? (
+            <div className="error-message">{formik.errors.password}</div>
+          ) : null}
         </div>
 
         <button className="submit-btn" type="submit">
