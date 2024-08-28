@@ -20,9 +20,8 @@ export default function Login() {
     }),
 
     onSubmit: (values) => {
-      setLoggedIn((prev) => !prev);
       localStorage.setItem("user", JSON.stringify(values));
-      navigate("/home");
+      setLoggedIn(true);
     },
   });
 

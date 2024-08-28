@@ -11,8 +11,14 @@ function ContextWrapper({ children }) {
   const checkUser = localStorage.getItem("user");
 
   useEffect(() => {
-    if (!loggedIn && !checkUser) {
-      navigate("/");
+    if (checkUser) {
+      setLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate("/home");
     }
   }, [loggedIn]);
 

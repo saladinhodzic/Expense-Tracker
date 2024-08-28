@@ -3,12 +3,12 @@ import "./Header.css";
 import { AppContext } from "../../context/ContextWrapper";
 
 export default function Header() {
-  const { checkUser, setLoggedIn, loggedIn, navigate, location } =
-    useContext(AppContext);
+  const { loggedIn, setLoggedIn, navigate, location } = useContext(AppContext);
 
   const handleRemoveUser = () => {
-    setLoggedIn((prev) => !prev);
     localStorage.removeItem("user");
+    setLoggedIn(false);
+    navigate("/");
   };
 
   let list = (
@@ -27,7 +27,7 @@ export default function Header() {
       <button onClick={() => navigate("/auth")}>Login</button>
     );
 
-  if (!loggedIn || !checkUser) {
+  if (!loggedIn) {
     list = <ul className="list">{loginButton}</ul>;
   }
 
