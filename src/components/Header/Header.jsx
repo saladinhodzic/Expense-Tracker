@@ -27,7 +27,7 @@ export default function Header() {
       <button onClick={() => navigate("/auth")}>Login</button>
     );
 
-  if (!loggedIn && !checkUser) {
+  if (!loggedIn || !checkUser) {
     list = <ul className="list">{loginButton}</ul>;
   }
 
