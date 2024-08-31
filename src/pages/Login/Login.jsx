@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { useContext } from "react";
 import * as Yup from "yup";
 import { AppContext } from "../../context/ContextWrapper";
+import { CiUser } from "react-icons/ci";
 export default function Login() {
   const { setLoggedIn } = useContext(AppContext);
   const formik = useFormik({
@@ -30,6 +31,7 @@ export default function Login() {
 
   return (
     <div className="login-wrapper">
+      <CiUser />
       <form className="login-form" onSubmit={formik.handleSubmit}>
         <div className="input-field">
           <label htmlFor="username">Username</label>
