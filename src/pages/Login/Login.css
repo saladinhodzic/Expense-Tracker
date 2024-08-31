@@ -5,14 +5,17 @@
   border-radius: 5px;
   padding: 1.5em;
   background-color: rgba(0, 0, 0, 0.05);
-}
-
-.login-form {
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1em;
+}
+
+.login-form {
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 3em;
 }
 
 .input-field {
@@ -27,4 +30,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.user-icon-container {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+.user-icon {
+  font-size: 2.5em;
 }

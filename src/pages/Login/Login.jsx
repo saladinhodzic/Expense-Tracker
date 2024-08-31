@@ -31,7 +31,9 @@ export default function Login() {
 
   return (
     <div className="login-wrapper">
-      <CiUser />
+      <div className="user-icon-container">
+        <CiUser className="user-icon" />
+      </div>
       <form className="login-form" onSubmit={formik.handleSubmit}>
         <div className="input-field">
           <label htmlFor="username">Username</label>
