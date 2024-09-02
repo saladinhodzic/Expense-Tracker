@@ -2,3 +2,11 @@
   display: flex;
   width: 85%;
 }
+
+.welcome-section {
+  width: 50%;
+}
+
+.welcome-section > h1 {
+  font-size: 2em;
+}
