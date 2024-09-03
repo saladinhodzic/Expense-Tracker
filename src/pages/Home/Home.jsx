@@ -8,7 +8,10 @@ export default function Home() {
         <h1>Welcome to Expense Tracker, {username.username}.</h1>
         <h3>With us you can find out how much you earn, save and spend.</h3>
       </section>
-      <section className="enter-info-section"></section>
+      <section className="enter-info-section">
+        <label>Enter your salary</label>
+        <input type="number" />
+      </section>
     </div>
   );
 }
