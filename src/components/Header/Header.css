@@ -24,3 +24,7 @@ header {
   align-items: center;
   gap: 2em;
 }
+
+.header-wrapper .list > li {
+  cursor: pointer;
+}
