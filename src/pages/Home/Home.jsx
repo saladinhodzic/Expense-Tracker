@@ -9,7 +9,7 @@ export default function Home() {
         <h3>With us you can find out how much you earn, save and spend.</h3>
       </section>
       <section className="enter-info-section">
-        <label>Enter your salary</label>
+        <label>Enter your salary:</label>
         <input type="number" />
       </section>
     </div>
