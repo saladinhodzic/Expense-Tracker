@@ -1,9 +1,11 @@
 .home-page-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 2em;
   width: 85%;
+  height: 70vh;
 }
 
 .welcome-section {
@@ -16,8 +18,10 @@
   font-size: 2em;
 }
 
-.enter-info-section {
+.enter-info {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1em;
+  margin: 2em 0;
 }
