@@ -24,7 +24,7 @@ export default function Home() {
         <p>With us you can find out how much you earn, save and spend.</p>
         <div className="enter-info">
           <label>Enter your salary:</label>
-          <input type="number" value={inputNumber} onChange={handleChange} />
+          <input type="number" onChange={handleChange} />
           <button onClick={handleSubmit}>Submit</button>
         </div>
       </section>
