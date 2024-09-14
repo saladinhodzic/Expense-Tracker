@@ -25,12 +25,12 @@ header {
   gap: 2em;
 }
 
-.header-wrapper .list > li {
-  cursor: pointer;
+.inActive-input {
   color: #ffffffbd;
   transition: all 200ms ease-in;
 }
-.header-wrapper .list > li:hover {
+
+.active-input {
   cursor: pointer;
   color: #fff;
 }

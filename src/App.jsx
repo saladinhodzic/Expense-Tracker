@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
+import Profile from "./pages/Profile/Profile";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/home/profile" element={<Profile />} />
         </Routes>
       </main>
       <Footer />

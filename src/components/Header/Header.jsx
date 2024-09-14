@@ -13,7 +13,7 @@ export default function Header() {
 
   let list = (
     <ul className="list">
-      <li>Profile</li>
+      <li className="inActive-input">Profile</li>
       <li>Your Savings</li>
       <li>Your expenses</li>
       <button onClick={handleRemoveUser}>Logout</button>

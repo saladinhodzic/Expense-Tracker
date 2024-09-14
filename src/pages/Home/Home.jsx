@@ -1,6 +1,15 @@
+import { useContext } from "react";
 import "./Home.css";
+import { AppContext } from "../../context/ContextWrapper";
 export default function Home() {
   const username = JSON.parse(localStorage.getItem("user"));
+  const { checkSalary, setCheckSalary, navigate } = useContext(AppContext);
+
+  const handleSubmit = () => {
+    setCheckSalary(true);
+    navigate("/home/profile");
+  };
+  console.log(checkSalary);
 
   return (
     <div className="home-page-wrapper">
@@ -10,7 +19,7 @@ export default function Home() {
         <div className="enter-info">
           <label>Enter your salary:</label>
           <input type="number" />
-          <button>Submit</button>
+          <button onClick={handleSubmit}>Submit</button>
         </div>
       </section>
     </div>
