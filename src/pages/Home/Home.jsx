@@ -3,10 +3,9 @@ import "./Home.css";
 import { AppContext } from "../../context/ContextWrapper";
 export default function Home() {
   const username = JSON.parse(localStorage.getItem("user"));
-  const { checkSalary, setCheckSalary, navigate } = useContext(AppContext);
+  const { navigate } = useContext(AppContext);
 
   const handleSubmit = () => {
-    setCheckSalary(true);
     navigate("/home/profile");
   };
 

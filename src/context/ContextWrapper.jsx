@@ -6,7 +6,6 @@ const AppContext = createContext();
 
 function ContextWrapper({ children }) {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [checkSalary, setCheckSalary] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const checkUser = localStorage.getItem("user");
@@ -29,8 +28,6 @@ function ContextWrapper({ children }) {
     navigate,
     location,
     checkUser,
-    checkSalary,
-    setCheckSalary,
   };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 }
