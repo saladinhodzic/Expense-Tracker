@@ -27,4 +27,10 @@ header {
 
 .header-wrapper .list > li {
   cursor: pointer;
+  color: #ffffffbd;
+  transition: all 200ms ease-in;
+}
+.header-wrapper .list > li:hover {
+  cursor: pointer;
+  color: #fff;
 }
