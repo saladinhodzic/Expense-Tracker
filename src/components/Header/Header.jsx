@@ -3,7 +3,8 @@ import "./Header.css";
 import { AppContext } from "../../context/ContextWrapper";
 
 export default function Header() {
-  const { loggedIn, setLoggedIn, navigate, location } = useContext(AppContext);
+  const { loggedIn, setLoggedIn, navigate, location, checkSalary } =
+    useContext(AppContext);
 
   const handleRemoveUser = () => {
     localStorage.removeItem("user");
@@ -13,7 +14,9 @@ export default function Header() {
 
   let list = (
     <ul className="list">
-      <li className="inActive-input">Profile</li>
+      <li className={checkSalary ? "active-input" : "inActive-input"}>
+        Profile
+      </li>
       <li>Your Savings</li>
       <li>Your expenses</li>
       <button onClick={handleRemoveUser}>Logout</button>

@@ -9,7 +9,6 @@ export default function Home() {
     setCheckSalary(true);
     navigate("/home/profile");
   };
-  console.log(checkSalary);
 
   return (
     <div className="home-page-wrapper">
