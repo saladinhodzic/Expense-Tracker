@@ -1,12 +1,20 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./Home.css";
 import { AppContext } from "../../context/ContextWrapper";
 export default function Home() {
+  const [inputNumber, setInputNumber] = useState(0);
+
   const username = JSON.parse(localStorage.getItem("user"));
   const { navigate } = useContext(AppContext);
 
+  const handleChange = (e) => {
+    setInputNumber(e.target.value);
+  };
+
   const handleSubmit = () => {
-    navigate("/home/profile");
+    if (inputNumber > 0) {
+      navigate("/home/profile");
+    }
   };
 
   return (
@@ -16,7 +24,7 @@ export default function Home() {
         <p>With us you can find out how much you earn, save and spend.</p>
         <div className="enter-info">
           <label>Enter your salary:</label>
-          <input type="number" />
+          <input type="number" value={inputNumber} onChange={handleChange} />
           <button onClick={handleSubmit}>Submit</button>
         </div>
       </section>
