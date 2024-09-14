@@ -6,7 +6,7 @@ export default function Home() {
     <div className="home-page-wrapper">
       <section className="welcome-section">
         <h1>Welcome to Expense Tracker, {username.username}.</h1>
-        <h3>With us you can find out how much you earn, save and spend.</h3>
+        <p>With us you can find out how much you earn, save and spend.</p>
         <div className="enter-info">
           <label>Enter your salary:</label>
           <input type="number" />
